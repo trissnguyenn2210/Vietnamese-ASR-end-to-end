@@ -47,8 +47,17 @@ CER is reported alongside it.
 
 The included `results/` files record the existing run. Fine-tuned test results
 were WER 8.68% and CER 4.72%; the pretrained validation baseline was WER 11.32%
-and CER 7.33%. The 6.3 GB fine-tuned checkpoint is kept outside GitHub; training
-creates a new local checkpoint under `artifacts/`.
+and CER 7.33%. The existing 6.3 GB checkpoint and full local artifacts are
+preserved at `~/data/speech-artifacts/pho-whisper-small-fleurs-vi/` and are not
+uploaded to GitHub. To use that checkpoint:
+
+```bash
+uv run speech-transcribe ./sample.wav \
+  --checkpoint ~/data/speech-artifacts/pho-whisper-small-fleurs-vi
+```
+
+New training runs create a checkpoint under this repository's ignored
+`artifacts/` folder.
 
 The dataset is [Google FLEURS](https://huggingface.co/datasets/google/fleurs),
 configuration `vi_vn`, licensed CC-BY 4.0. Retain attribution when sharing
