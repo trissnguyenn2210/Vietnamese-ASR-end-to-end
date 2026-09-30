@@ -1,0 +1,35 @@
+[project]
+name = "vietnamese-asr-end-to-end"
+version = "0.1.0"
+description = "End-to-end Vietnamese ASR fine-tuning and evaluation with PhoWhisper"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "accelerate>=1.0,<2",
+    "datasets>=3.6,<4",
+    "huggingface-hub>=0.30",
+    "jiwer>=3.0,<5",
+    "matplotlib>=3.9",
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "scipy>=1.12",
+    "soundfile>=0.12",
+    "torch>=2.4",
+    "transformers>=4.46,<5",
+]
+
+[project.scripts]
+speech-train = "train:main"
+speech-evaluate = "evaluate:main"
+speech-transcribe = "transcribe:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+package = true
+
+[tool.setuptools]
+py-modules = ["cache", "data", "evaluate", "preprocessing", "train", "transcribe"]
+include-package-data = false

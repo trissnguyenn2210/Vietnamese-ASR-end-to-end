@@ -1,0 +1,10 @@
+{
+  "checkpoint": "vinai/PhoWhisper-small",
+  "dataset": "google/fleurs",
+  "config": "vi_vn",
+  "split": "validation",
+  "examples": 361,
+  "wer_syllable": 0.11322203032047591,
+  "cer": 0.073291034722524,
+  "metric_normalization": "NFC, lowercase, punctuation removed; Vietnamese diacritics retained"
+}
